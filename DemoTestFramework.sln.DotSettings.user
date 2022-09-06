@@ -1,0 +1,15 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6b02c50_002D5aa6_002D4dbd_002D8847_002Ddaa455ced0ca/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetPlanetsTesting" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.Tests.GetPlanetsTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.PostPetsTests.PostPetsByObjectTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.PostPetsTests.PostPetsTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.Tests.GetPlanetsByObjectTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.GetPlanetsRestSharpTest.GetPlanetsByRestSharpTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.validationTests.GetPlanetValidationTests.GetPlanetsTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7C3FA48-21C9-401D-BE23-231B030C5E50::net6.0::DemoTestFramework.validationTests.GetPlanetValidationTests.GetPlanetsValidTesting&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;A7C3FA48-21C9-401D-BE23-231B030C5E50/f:PostPetsTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
