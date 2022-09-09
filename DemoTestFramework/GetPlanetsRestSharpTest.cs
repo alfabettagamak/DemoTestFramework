@@ -32,16 +32,20 @@ namespace DemoTestFramework
             request.AddParameter("page", page);
             RestResponse response = client.Execute(request);
             ResponsePlanet result = JsonConvert.DeserializeObject<ResponsePlanet>(response.Content);
-            /*Assert.Multiple(() =>
+            
+            
+            /*
+             //https://docs.nunit.org/articles/nunit/writing-tests/assertions/multiple-asserts.html
+             Assert.Multiple(() =>
             {
                 Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
                 Assert.NotNull(result.Next);
                 Assert.AreEqual(result.Count, 60);
             });*/
 
-            CustomAssertIsNotNull(result.Next);
-            CustomAssertIsNull(result.Previous);
-            //CustomAssertAreEqual(HttpStatusCode.OK, response.StatusCode));
+            //CustomAssertIsNotNull(result.Next);
+            //CustomAssertIsNull(result.Previous);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             CustomAssertAreEqual(result.Count, 60);
         }
     }

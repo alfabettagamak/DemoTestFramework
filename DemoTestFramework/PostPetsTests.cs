@@ -5,11 +5,12 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using DemoTestFramework.models;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace DemoTestFramework
 {
-    public class PostPetsTests
+    public class PostPetsTests : TestBase
     {
 
         private string Api = "https://petstore.swagger.io/v2/pet";
@@ -23,8 +24,11 @@ namespace DemoTestFramework
                           "\"available\"}";
             var postContent = new StringContent(body, Encoding.UTF8, "application/json");
             var result = await client.PostAsync(Api, postContent );
-            Console.WriteLine(await result.Content.ReadAsStringAsync());
+            
+            string content = await result.Content.ReadAsStringAsync();
+            Pets? response = JsonConvert.DeserializeObject<Pets>(content);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode, "Код ответа от апи не соответсвует ожидаемому");
+            CustomAssertAreEqual(1, response.Id);
         }
         
         [Test]

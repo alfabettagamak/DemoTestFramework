@@ -5,7 +5,7 @@
         "count": {"type": "integer",
             "const":  60},
         "next" : {"type" :  "string"},
-        "previous" : {"type" :  "string"},
+        "previous" : {"type" :  ["string", "null"] },
         "results": {
             "type": "array",
             "items": {
