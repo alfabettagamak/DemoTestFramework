@@ -4,16 +4,22 @@ namespace DemoTestFramework.models
 {
     public class Planet
     {
+        public int Id { get; set; }
+        
         [JsonProperty("name")] 
         public string Name { get; set; }
 
-        [JsonProperty("rotation_period")] public string RotationPeriod { get; set; }
+        [JsonProperty("rotation_period")] 
+        public string RotationPeriod { get; set; }
 
-        [JsonProperty("orbital_period")] public string OrbitalPeriod { get; set; }
+        [JsonProperty("orbital_period")] 
+        public string OrbitalPeriod { get; set; }
 
-        [JsonProperty("diameter")] public string Diameter { get; set; }
+        [JsonProperty("diameter")] 
+        public string Diameter { get; set; }
 
-        [JsonProperty("climate")] public string Climate { get; set; }
+        [JsonProperty("climate")] 
+        public string Climate { get; set; }
 
         [JsonProperty("gravity")] public string Gravity { get; set; }
 
