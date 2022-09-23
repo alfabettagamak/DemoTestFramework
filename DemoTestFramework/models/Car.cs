@@ -4,10 +4,9 @@
     {
         public int Id { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
-        
-        public int PersonId { get; set; }
+        public string Year { get; set; }
         
         public Person Person { get; set; }
+        public int PersonId { get; set; }
     }
 }

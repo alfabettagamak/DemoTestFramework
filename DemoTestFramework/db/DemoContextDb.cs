@@ -10,8 +10,7 @@ namespace DemoTestFramework.db
             Database.EnsureCreated();
         }
 
-        public DbSet<Planet> Planets { get; set; }
-        
+        public DbSet<Planet?> Planets { get; set; }
         
         public DbSet<Person> Persons { get; set; }
         public DbSet<Car> Cars { get; set; }
@@ -19,7 +18,7 @@ namespace DemoTestFramework.db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Entity;Username=postgres;Password=admin");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Entity1;Username=postgres;Password=admin");
         }
     }
 }

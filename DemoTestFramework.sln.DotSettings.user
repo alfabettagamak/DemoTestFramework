@@ -1,4 +1,43 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6b02c50_002D5aa6_002D4dbd_002D8847_002Ddaa455ced0ca/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetPlanetsTesting" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="D:\testing\Maxima_Aqa\ApiTesting\DemoTestFramework\DemoTestFramework" Presentation="&amp;lt;DemoTestFramework&amp;gt;" /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7792f570_002D56d4_002D4e08_002D838b_002D132c4122a26e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Or&gt;&#xD;
+        &lt;Project Location="D:\testing\Maxima_Aqa\ApiTesting\DemoTestFramework\DemoTestFramework" Presentation="&amp;lt;DemoTestFramework&amp;gt;" /&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Tests.Test1&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Or&gt;&#xD;
+      &lt;Not&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Tests.Test1&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Not&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests.GoogleTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests.OpenKznRegistrationTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests.OpenKznAuthTesting&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6b02c50_002D5aa6_002D4dbd_002D8847_002Ddaa455ced0ca/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetPlanetsTesting" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Or&gt;&#xD;
+        &lt;Project Location="D:\testing\Maxima_Aqa\ApiTesting\DemoTestFramework\DemoTestFramework" Presentation="&amp;lt;DemoTestFramework&amp;gt;" /&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Tests.Test1&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Or&gt;&#xD;
+      &lt;Not&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Tests.Test1&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Not&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests.GoogleTesting&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
