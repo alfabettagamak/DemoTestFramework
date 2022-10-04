@@ -2,6 +2,6 @@
 {
     public class Locators
     {
-        public static string submitButton = "//button[@data-ui='submit']";
+        public static string submitButton = "//button[@data-ui='submitBtn']";
     }
 }

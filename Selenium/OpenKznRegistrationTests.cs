@@ -5,6 +5,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Selenium.pages;
 using SeleniumExtras.WaitHelpers;
 
 namespace Selenium
@@ -23,17 +24,20 @@ namespace Selenium
             driver.Navigate().GoToUrl("https://old.kzn.opencity.pro/");
         }
         
+        [TearDown]
+        public void TearDown()
+        {
+            driver.Close();
+        }
+        
 
         [Test]
         public void OpenKznRegistrationTesting()
         {
-            IWebElement registration = driver.FindElement(By.XPath("//a[@data-ui='registration']"));
-            registration.Click();
-
-            string email = Utils.GetRandomEmail();
-            driver.FindElement(By.Name("email")).SendKeys(email);
-            driver.FindElement(By.CssSelector(Locators.submitButton)).Click();
-
+            var page = new MainPage(driver, wait).GetRegistrationPage();
+            page.SetEmail(Utils.GetRandomEmail());
+            page.SubmitRegistration();
+            
             bool isDisplayed = wait.Until( e => e.FindElement(By.XPath("//h3[text()='Вы зарегистрированы!']"))
                 .Displayed);
             Assert.IsTrue(isDisplayed);

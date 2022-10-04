@@ -38,6 +38,13 @@ namespace DemoTestFramework.models
         [JsonProperty("edited")] public string Edited { get; set; }
 
         [JsonProperty("url")] public string Url { get; set; }
+
+
+        public Planet changeRotationPeriod()
+        {
+            this.RotationPeriod = "dfsdfsdf";
+            return this;
+        }
     }
 
     public class ResponsePlanet
@@ -52,7 +59,7 @@ namespace DemoTestFramework.models
         public string Previous { get; set; }
         
         [JsonProperty("results")]
-        public Planet[] Results { get; set; }
+        public Planet?[] Results { get; set; }
     }
 
 }
