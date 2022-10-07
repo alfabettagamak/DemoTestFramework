@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Selenium.pages;
 using SeleniumExtras.WaitHelpers;
+using SeleniumExtras.PageObjects;
 
 namespace Selenium
 {
@@ -34,13 +35,36 @@ namespace Selenium
         [Test]
         public void OpenKznRegistrationTesting()
         {
-            var page = new MainPage(driver, wait).GetRegistrationPage();
-            page.SetEmail(Utils.GetRandomEmail());
-            page.SubmitRegistration();
-            
+            var mainPage = new MainPage(driver, wait);
+            mainPage
+                .GetRegistrationPage()
+                .SetEmail(Utils.GetRandomEmail())
+                .SubmitRegistration();
+
             bool isDisplayed = wait.Until( e => e.FindElement(By.XPath("//h3[text()='Вы зарегистрированы!']"))
                 .Displayed);
+            Thread.Sleep(5000);
             Assert.IsTrue(isDisplayed);
+        }
+
+
+        [Test]
+        public void FactoryTesting()
+        {
+            var mainPage = new MainPage(driver, wait);
+            PageFactory.InitElements(driver, mainPage);
+            mainPage.Information.Click();
+            Assert.AreEqual("https://old.kzn.opencity.pro/information", driver.Url);
+        }
+
+
+        [Test]
+        public void PageElementTesting()
+        {
+            var mainPage = new MainPage(driver, wait);
+            mainPage.InformationMenu.onClick();          
+            Assert.AreEqual("https://old.kzn.opencity.pro/information", driver.Url);
+            
         }
 
     }

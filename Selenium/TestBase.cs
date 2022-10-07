@@ -52,9 +52,8 @@ namespace Selenium
             check.Click();
 
             driver.SwitchTo().ParentFrame();*/
-            
-            driver.Manage().Cookies.AddCookie(new Cookie("PHPSESSID", "4al1r6rinp8gmdq19rvlpjp2k3"));  
-            driver.Manage().Cookies.AddCookie(new Cookie("token", "{\"expired\":\"2022-10-05+12:39:39\",\"token\":\"d695bd895da89a5f31735514b4b5cc9232e0c86c\",\"key\":\"OAuth\",\"refresh\":\"196c0b0fb2a97d998b8ea051636dee2008076bd0\",\"refreshExpired\":\"2022-12-03+12:39:39\"}"));
+            driver.Manage().Cookies.AddCookie(new Cookie("PHPSESSID", "g1q629njfnm4sr1a63n0l2q075"));  
+            driver.Manage().Cookies.AddCookie(new Cookie("token", "{\"expired\":\"2022-10-08+18:46:35\",\"token\":\"8df3f496783a08d2e6634f3d8c845d80b2c4e27d\",\"key\":\"OAuth\",\"refresh\":\"688b042cd82de8cf6ed4d624a63e57a8d05e58d7\",\"refreshExpired\":\"2022-12-06+18:46:35\"}"));
             driver.Manage().Cookies.AddCookie(new Cookie("_ym_uid", "1639659381772082907"));
             driver.Manage().Cookies.AddCookie(new Cookie("_ym_d", "1663948815"));
             driver.Manage().Cookies.AddCookie(new Cookie("slider", "6"));

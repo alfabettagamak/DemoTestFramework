@@ -11,6 +11,8 @@
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests.OpenKznAuthTesting&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznTests&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznRegistrationTests.OpenKznRegistrationTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznRegistrationTests.FactoryTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.OpenKznRegistrationTests.PageElementTesting&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

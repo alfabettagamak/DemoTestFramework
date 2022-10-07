@@ -14,15 +14,17 @@ namespace Selenium.pages
             _wait = wait;
         }
 
-        public void SetEmail(string email)
+        public RegistrationPage SetEmail(string email)
         {
             _wait.Until(e => e.FindElement(By.Name("email"))).SendKeys(email);
+            return this;
         }
 
-        public void SubmitRegistration()
+        public MainPage SubmitRegistration()
         {
            var element =  _driver.FindElement(By.XPath(Locators.submitButton));
            element.Click();
+           return new MainPage(this._driver, _wait);
         }
     }
 }
