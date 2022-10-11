@@ -99,5 +99,97 @@ namespace Selenium
             Thread.Sleep(6000);
         }
 
+
+        [Test]
+        public void allertTesting()
+        {
+            executor.ExecuteScript("setTimeout(function() {alert('FROM C#!')}, 5000)");
+            wait.Until(ExpectedConditions.AlertIsPresent());
+            driver.SwitchTo().Alert().Accept();
+            var elements = driver.FindElements(By.XPath("//ul"));
+            foreach (var element in elements)
+            {
+                Console.WriteLine(element.Text);
+            }
+        }
+
+        [Test]
+        public void allertConfirmTesting()
+        {
+            executor.ExecuteScript("document.check = confirm('YES OR NOT')");
+            driver.SwitchTo().Alert().Dismiss();
+            bool answer = (bool) executor.ExecuteScript("return document.check");
+            Assert.False(answer);
+        }
+        
+        
+        [Test]
+        public void allertPromtTesting()
+        {
+            executor.ExecuteScript("document.check = prompt('Input text')");
+            wait.Until(ExpectedConditions.AlertIsPresent());
+            driver.SwitchTo().Alert().SendKeys("SOME VALUE!");
+            driver.SwitchTo().Alert().Accept();
+            driver.SwitchTo().Frame("");
+            string answer = (string) executor.ExecuteScript("return document.check");
+            Console.WriteLine(answer);
+        }
+
+
+        [Test]
+        public void newTabSwitchTesting()
+        {
+            driver.SwitchTo().NewWindow(WindowType.Tab);
+            driver.Navigate().GoToUrl("https://google.com");
+            driver.SwitchTo().NewWindow(WindowType.Tab);
+            driver.Navigate().GoToUrl("https://ya.ru");
+            driver.SwitchTo().NewWindow(WindowType.Window);
+            driver.Url = "https://ngs.ru";
+            Thread.Sleep(1000);
+            var tabs = driver.WindowHandles;
+            foreach (var tab in tabs)
+            {
+                driver.SwitchTo().Window(tab);
+                Thread.Sleep(1000);
+                if (driver.Url != "https://www.google.com/") driver.Close();
+            }
+            Thread.Sleep(3000);
+        }
+
+        [Test]
+        public void cookieTesting()
+        {
+            var cookies = driver.Manage().Cookies.AllCookies;
+            foreach (var cookie in cookies)
+            {
+                Console.WriteLine(cookie);
+            }
+            
+            driver.Manage().Cookies.DeleteAllCookies();
+            driver.Url = "https://old.kzn.opencity.pro/cabinet/myprofile";
+            Thread.Sleep(6000);
+
+            string cookiesJS = (string)executor.ExecuteScript("return document.cookie");
+            Console.WriteLine("!!! " + cookiesJS);
+        }
+
+        [Test]
+        public void jSExampleTesting()
+        {
+            IWebElement element = driver.FindElement(By.XPath("//div[@data-ui='selected']"));
+            executor.ExecuteScript("arguments[0].innerText = '666666666666666666664'", element);
+            Thread.Sleep(10000);
+        }
+        
+        
+        [Test]
+        public void jSExampleParentTesting()
+        {
+            IWebElement element = driver.FindElement(By.XPath("//div[@data-ui='selected']"));
+            var elementParent = executor.ExecuteScript("return arguments[0].parentElement", element);
+            Console.WriteLine(elementParent.GetType());
+            Thread.Sleep(10000);
+        }
+        
     }
 }
