@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -12,12 +13,15 @@ using SeleniumExtras.WaitHelpers;
 namespace Selenium
 {
 
+    //https://docs.nunit.org/articles/nunit/writing-tests/attributes/parallelizable.html
     [TestFixture]
+    [Parallelizable(scope: ParallelScope.All )]
     public class OpenKznTests : TestBase
     {
 
         private bool isNeedAuth = true;
         private JObject testUser;
+        private bool isNeedScreenEtalon = false;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -90,13 +94,27 @@ namespace Selenium
         [Test]
         public void ScreenTesting()
         {
-            Screenshot screenshot = driver.GetScreenshot();
-            screenshot.SaveAsFile(@"D:\testing\Maxima_Aqa\ApiTesting\DemoTestFramework\Selenium\screens\exaple.png");
+            string expectedPathFile = Utils.GetFilePathByFileName(@"screens/expect/lk.png");
+            string actualPathFile = Utils.GetFilePathByFileName(@"screens/actual/lk.png");
+            
+            if (isNeedScreenEtalon) {           
+                Screenshot screenshot = driver.GetScreenshot();
+                screenshot.SaveAsFile(expectedPathFile);
+                
+            }
 
-            IWebElement element = driver.FindElement(By.XPath(Locators.submitButton));
+            Screenshot screenActual = driver.GetScreenshot();
+            screenActual.SaveAsFile(actualPathFile);
+
+            byte[] expectedFile = File.ReadAllBytes(expectedPathFile);
+            byte[] actualFile = File.ReadAllBytes(actualPathFile);
+            
+            Assert.AreEqual(expectedFile, actualFile);
+            
+            /*IWebElement element = driver.FindElement(By.XPath(Locators.submitButton));
             Screenshot screenElement = ((ITakesScreenshot) element).GetScreenshot();
-            screenElement.SaveAsFile(@"D:\testing\Maxima_Aqa\ApiTesting\DemoTestFramework\Selenium\screens\example1.png");
-            Thread.Sleep(6000);
+            screenElement.SaveAsFile(Utils.GetFilePathByFileName(@"screens/actual/lk.png"));
+            Thread.Sleep(6000);*/
         }
 
 
@@ -185,11 +203,22 @@ namespace Selenium
         [Test]
         public void jSExampleParentTesting()
         {
+            Thread.Sleep(10000);
             IWebElement element = driver.FindElement(By.XPath("//div[@data-ui='selected']"));
             var elementParent = executor.ExecuteScript("return arguments[0].parentElement", element);
             Console.WriteLine(elementParent.GetType());
             Thread.Sleep(10000);
         }
-        
+
+
+        [Test]
+        public void checkStyyleTesting()
+        {
+            var element = driver.FindElement(By.XPath("//a[@class='btnExit']"));
+            JObject styles = JObject.Parse(File.ReadAllText( Utils.GetFilePathByFileName(@"css/cssExpected.json")));
+            Console.WriteLine(styles["font"]);
+            Console.WriteLine(element.GetCssValue("font"));
+            Assert.AreEqual(styles["font"].ToString(), element.GetCssValue("font"));
+        }
     }
 }

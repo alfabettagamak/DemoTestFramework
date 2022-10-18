@@ -25,7 +25,8 @@ namespace Selenium
 
             // Отключение "Браузером управляет автоматизированное ПО"
             option.AddAdditionalChromeOption("useAutomationExtension", false);
-            option.AddExcludedArgument("enable-automation");
+            option.AddExcludedArgument("enable-automation"); 
+            // option.AddArgument("headless"); -- браузер не открывается
             
             driver = new ChromeDriver(@"D:\testing\Maxima_Aqa\ApiTesting\chromedriver_win32", option);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));

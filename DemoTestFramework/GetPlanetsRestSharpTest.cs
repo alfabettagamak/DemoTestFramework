@@ -8,6 +8,7 @@ using RestSharp;
 
 namespace DemoTestFramework
 {
+    [Parallelizable(ParallelScope.All)]
     public class GetPlanetsRestSharpTest : TestBase
     {
         private string Endpoint;

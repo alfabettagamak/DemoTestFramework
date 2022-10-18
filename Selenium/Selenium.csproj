@@ -19,7 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="screens" />
+      <Folder Include="screens\actual" />
+      <Folder Include="screens\expect" />
+      <Folder Include="screens\remote" />
     </ItemGroup>
 
 </Project>
