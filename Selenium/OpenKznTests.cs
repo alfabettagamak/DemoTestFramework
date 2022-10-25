@@ -15,7 +15,7 @@ namespace Selenium
 
     //https://docs.nunit.org/articles/nunit/writing-tests/attributes/parallelizable.html
     [TestFixture]
-    [Parallelizable(scope: ParallelScope.All )]
+    //  [Parallelizable(scope: ParallelScope.All )]
     public class OpenKznTests : TestBase
     {
 
@@ -83,11 +83,10 @@ namespace Selenium
                "####", 47);
                */
 
-
-            var element = driver.FindElement(By.XPath("//div[@class='username']/span"));
+           var element = driver.FindElement(By.XPath("//div[@class='username']/span"));
             executor.ExecuteScript("arguments[0].textContent = '7777777777'",
                 element);
-            Thread.Sleep(10000);
+           // Thread.Sleep(1000);
         }
         
 
@@ -147,8 +146,8 @@ namespace Selenium
             executor.ExecuteScript("document.check = prompt('Input text')");
             wait.Until(ExpectedConditions.AlertIsPresent());
             driver.SwitchTo().Alert().SendKeys("SOME VALUE!");
-            driver.SwitchTo().Alert().Accept();
-            driver.SwitchTo().Frame("");
+            driver.SwitchTo().Alert().Accept(); 
+            //driver.SwitchTo().Frame("");
             string answer = (string) executor.ExecuteScript("return document.check");
             Console.WriteLine(answer);
         }
@@ -163,15 +162,15 @@ namespace Selenium
             driver.Navigate().GoToUrl("https://ya.ru");
             driver.SwitchTo().NewWindow(WindowType.Window);
             driver.Url = "https://ngs.ru";
-            Thread.Sleep(1000);
+          //  Thread.Sleep(1000);
             var tabs = driver.WindowHandles;
             foreach (var tab in tabs)
             {
                 driver.SwitchTo().Window(tab);
-                Thread.Sleep(1000);
+         //       Thread.Sleep(1000);
                 if (driver.Url != "https://www.google.com/") driver.Close();
             }
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
         }
 
         [Test]
@@ -185,7 +184,7 @@ namespace Selenium
             
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Url = "https://old.kzn.opencity.pro/cabinet/myprofile";
-            Thread.Sleep(6000);
+            //Thread.Sleep(6000);
 
             string cookiesJS = (string)executor.ExecuteScript("return document.cookie");
             Console.WriteLine("!!! " + cookiesJS);
@@ -196,18 +195,17 @@ namespace Selenium
         {
             IWebElement element = driver.FindElement(By.XPath("//div[@data-ui='selected']"));
             executor.ExecuteScript("arguments[0].innerText = '666666666666666666664'", element);
-            Thread.Sleep(10000);
         }
         
         
         [Test]
         public void jSExampleParentTesting()
         {
-            Thread.Sleep(10000);
+            //Thread.Sleep(10000);
             IWebElement element = driver.FindElement(By.XPath("//div[@data-ui='selected']"));
             var elementParent = executor.ExecuteScript("return arguments[0].parentElement", element);
             Console.WriteLine(elementParent.GetType());
-            Thread.Sleep(10000);
+           // Thread.Sleep(10000);
         }
 
 

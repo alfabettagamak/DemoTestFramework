@@ -43,7 +43,7 @@ namespace Selenium
 
             bool isDisplayed = wait.Until( e => e.FindElement(By.XPath("//h3[text()='Вы зарегистрированы!']"))
                 .Displayed);
-            Thread.Sleep(5000);
+           // Thread.Sleep(5000);
             Assert.IsTrue(isDisplayed);
         }
 

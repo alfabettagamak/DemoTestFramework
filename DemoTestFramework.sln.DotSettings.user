@@ -21,6 +21,7 @@
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Ololo.OpenGoogleAndSearch&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.Ololo&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.RemoteExample.GoogleExampleTesting&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::98CBAEC0-2EEE-48B9-B7DA-EB0A861803B4::net6.0::Selenium.AllureTests&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
