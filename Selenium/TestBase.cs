@@ -28,7 +28,7 @@ namespace Selenium
             option.AddExcludedArgument("enable-automation"); 
             // option.AddArgument("headless"); -- браузер не открывается
             
-            driver = new ChromeDriver(@"D:\testing\Maxima_Aqa\ApiTesting\chromedriver_win32", option);
+            driver = new ChromeDriver(option);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             executor = driver;
 
