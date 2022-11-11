@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 
-namespace Selenium
+namespace Selenium.utils
 {
     public class Utils
     {
-
         public static string GetRandomEmail()
         {
             DateTime dateTime = DateTime.Now;

@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Selenium.pages;
+using Selenium.utils;
 using SeleniumExtras.WaitHelpers;
 using SeleniumExtras.PageObjects;
 
@@ -21,8 +22,8 @@ namespace Selenium
 
         [SetUp]
         public void OneSetup()
-        {    
-            driver.Navigate().GoToUrl("https://old.kzn.opencity.pro/");
+        {
+            driver.Navigate().GoToUrl(baseUrl);
         }
         
         [TearDown]
@@ -54,7 +55,7 @@ namespace Selenium
             var mainPage = new MainPage(driver, wait);
             PageFactory.InitElements(driver, mainPage);
             mainPage.Information.Click();
-            Assert.AreEqual("https://old.kzn.opencity.pro/information", driver.Url);
+            Assert.AreEqual(baseUrl + "information", driver.Url);
         }
 
 
@@ -63,7 +64,7 @@ namespace Selenium
         {
             var mainPage = new MainPage(driver, wait);
             mainPage.InformationMenu.onClick();          
-            Assert.AreEqual("https://old.kzn.opencity.pro/information", driver.Url);
+            Assert.AreEqual(baseUrl + "/information", driver.Url);
             
         }
 

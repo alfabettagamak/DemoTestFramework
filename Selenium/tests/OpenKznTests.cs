@@ -4,16 +4,19 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using Newtonsoft.Json.Linq;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Selenium.utils;
 using SeleniumExtras.WaitHelpers;
 
 namespace Selenium
 {
 
     //https://docs.nunit.org/articles/nunit/writing-tests/attributes/parallelizable.html
+    [AllureNUnit]
     [TestFixture]
     //  [Parallelizable(scope: ParallelScope.All )]
     public class OpenKznTests : TestBase
@@ -28,7 +31,7 @@ namespace Selenium
         {
             //driver = new ChromeDriver();
             testUser = (JObject) testData["testUser2"];
-            driver.Navigate().GoToUrl("https://old.kzn.opencity.pro/");
+            driver.Navigate().GoToUrl(baseUrl);
             Authorization(testUser["login"].ToString(), testUser["password"].ToString());
         }
         
@@ -49,7 +52,7 @@ namespace Selenium
         public void OpenKznCheckMyProfileTesting()
         { 
             driver.FindElement(By.XPath("//a[@class='btn_edit_profile itemMenu']")).Click();
-            Assert.AreEqual("https://old.kzn.opencity.pro/cabinet/myprofile", driver.Url);
+            Assert.AreEqual(baseUrl + "cabinet/myprofile", driver.Url);
  
         }
 
@@ -62,7 +65,7 @@ namespace Selenium
         {
             driver.Manage().Window.Size = new Size(height, weight);
             IJavaScriptExecutor executor = driver;
-            driver.Navigate().GoToUrl("https://old.kzn.opencity.pro/cabinet/myuk");
+            driver.Navigate().GoToUrl(baseUrl + "/cabinet/myuk");
             Boolean heightScroll =
                 (Boolean) executor.ExecuteScript("return document.documentElement.scrollHeight > document.documentElement.clientHeight");
             Boolean weightScroll =
@@ -183,7 +186,7 @@ namespace Selenium
             }
             
             driver.Manage().Cookies.DeleteAllCookies();
-            driver.Url = "https://old.kzn.opencity.pro/cabinet/myprofile";
+            driver.Url = baseUrl + "cabinet/myprofile";
             //Thread.Sleep(6000);
 
             string cookiesJS = (string)executor.ExecuteScript("return document.cookie");

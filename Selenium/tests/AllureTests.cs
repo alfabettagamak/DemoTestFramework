@@ -25,7 +25,7 @@ namespace Selenium
         {
             //driver = new ChromeDriver();
             testUser = (JObject) testData["testUser2"];
-            driver.Navigate().GoToUrl("https://old.kzn.opencity.pro/");
+            driver.Navigate().GoToUrl(baseUrl);
             Authorization(testUser["login"].ToString(), testUser["password"].ToString());
         }
         
